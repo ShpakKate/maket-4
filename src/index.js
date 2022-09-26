@@ -1,3 +1,3 @@
-console.log('умри webpack ')
+import './scss/main.scss';
 
-import('./src/index.html')
+console.log('умри webpack ')
