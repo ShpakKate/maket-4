@@ -14,7 +14,7 @@ module.exports = {
     entry: './src/index.js',
     module: {
         rules: [
-            { test: /\.svg$/, use: 'svg-inline-loader' },
+            {   test: /\.svg$/, use: 'svg-inline-loader' },
             {
                 test: /\.(scss|css)$/,
                 use: ['style-loader', 'css-loader', 'sass-loader'],
@@ -23,7 +23,15 @@ module.exports = {
                 test: /\.(js)$/,
                 exclude: /node_modules/,
                 use: 'babel-loader'
-            }
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                loader: 'file-loader',
+                options: {
+                    name: '[path][name].[ext]',
+                    outputPath: 'dist/images',
+                },
+              },
         ]
     },
     output: {
