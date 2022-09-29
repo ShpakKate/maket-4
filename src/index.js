@@ -1,3 +1,5 @@
 import './scss/main.scss';
 
-console.log('умри webpack ')
+import './images/header.png'
+
+console.log('умри webpack')
