@@ -1,23 +1,20 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { template } = require('babel-core')
-/*const ENV = process.env.NODE_ENV === "production" ? "production" : "development"*/
 
 let mode = 'development'
 if (process.env.NODE_ENV === "production") {
     mode = 'production'
 }
-console.log(mode + 'mode')
 
 module.exports = {
     mode: 'development',
     entry: './src/index.js',
     module: {
         rules: [
-            {   test: /\.svg$/, use: 'svg-inline-loader' },
+            { test: /\.svg$/, use: 'svg-inline-loader' },
             {
                 test: /\.(scss|css)$/,
-                use: ['style-loader', 'css-loader', 'sass-loader'],
+                use: [ 'style-loader', 'css-loader', 'sass-loader' ],
             },
             {
                 test: /\.(js)$/,
@@ -25,18 +22,24 @@ module.exports = {
                 use: 'babel-loader'
             },
             {
-                test: /\.(png|jpe?g|gif)$/i,
-                loader: 'file-loader',
-                options: {
-                    name: '[path][name].[ext]',
-                    outputPath: 'dist/images',
-                },
-              },
+                test: /\.(png|jpg|gif|json|xml|ico|svg)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                            outputPath: 'assets/',
+                            publicPath: '/'
+                        }
+                    }
+                ]
+            }
         ]
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        publicPath: '/dist/',
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -46,7 +49,7 @@ module.exports = {
     ],
     devServer: {
         static: {
-            directory: path.join(__dirname, 'dist'),
+            directory: path.join(__dirname, '/src'),
         },
         liveReload: true,
         hot: false,
