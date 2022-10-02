@@ -1,5 +1,6 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 let mode = 'development'
 if (process.env.NODE_ENV === "production") {
@@ -12,10 +13,6 @@ module.exports = {
     module: {
         rules: [
             { test: /\.svg$/, use: 'svg-inline-loader' },
-            {
-                test: /\.(scss|css)$/,
-                use: [ 'style-loader', 'css-loader', 'sass-loader' ],
-            },
             {
                 test: /\.(js)$/,
                 exclude: /node_modules/,
@@ -33,28 +30,42 @@ module.exports = {
                         }
                     }
                 ]
-            }
-        ]
+            },
+            {
+                test: /\.(sass|scss)$/,
+                use: [{
+                    loader: "style-loader" // creates style nodes from JS strings
+                }, {
+                    loader: "css-loader" // translates CSS into CommonJS
+                }, {
+                    loader: "sass-loader" // compiles Sass to CSS
+                }]
+            },
+            { test: /\.css$/, use: [ 'style-loader', 'css-loader' ] }
+        ],
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js',
-        publicPath: '/dist/',
+        filename: 'index.js',
+        publicPath: '/',
     },
     plugins: [
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, './src/index.html'),
             filename: './index.html'
         }),
+        new webpack.HotModuleReplacementPlugin(),
     ],
     devServer: {
         static: {
-            directory: path.join(__dirname, '/src'),
+            directory: path.join(__dirname, '/dist'),
         },
         liveReload: true,
         hot: false,
-        compress: true,
+        compress: false,
         port: 9000,
     },
-
+    optimization: {
+        minimize: false,
+    },
 }
