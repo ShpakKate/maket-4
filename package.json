@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack serve --open",
+    "start": "npm run watch & npm run dev-server",
     "dev-server": "npx webpack serve",
-    "watch": "webpack --watch && npx webpack serve",
+    "watch": "webpack --watch",
     "prod": "cross-env NODE_ENV=production webpack",
     "dev": "webpack serve --open --config webpack.config.js"
   },
@@ -21,6 +21,7 @@
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "node-sass": "^7.0.3",
+    "sass": "^1.55.0",
     "sass-loader": "^13.0.2",
     "style-loader": "^3.3.1",
     "svg-inline-loader": "^0.8.2",
