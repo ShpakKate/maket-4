@@ -1,6 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 
 let mode = 'development'
 if (process.env.NODE_ENV === "production") {
@@ -47,14 +49,21 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'index.js',
-        publicPath: '/',
+        publicPath: '/dist',
     },
     plugins: [
+        /*new CleanWebpackPlugin(),*/
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, './src/index.html'),
             filename: './index.html'
         }),
         new webpack.HotModuleReplacementPlugin(),
+        
+        new CopyPlugin({
+            patterns: [
+              { from: "src/images", to: "assets" },
+            ],
+          }),
     ],
     devServer: {
         static: {

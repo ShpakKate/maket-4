@@ -34,7 +34,7 @@
 @mixin list {
     border-top: #f1f0ef solid 1px;
     border-left: #f1f0ef solid 1px;
-    border-bottom: $gray-border;
+    /*border-bottom: $gray-border;*/
 }
 
 @mixin list-content {
@@ -45,7 +45,7 @@
     margin-top: 0.45rem;
     margin-left: -0.8rem;
     width: 16.6rem;
-    height: 17.9rem; 
+    height: 17.9rem;
 }
 
 @mixin padding-margin {
@@ -59,10 +59,9 @@
 }
 
 @mixin group-list {
-    @include flex-p;
+    @include flex-between;
     @include list;
     @include padding-margin;
-    justify-content: space-around;
 }
 
 @mixin group-content {
@@ -72,10 +71,9 @@
     padding: 0 0.7rem;
     margin-top: 0.6rem;
     margin-left: -0.7rem;
-    width: 16.5rem;
+    width: 16.4rem;
     height: 17.9rem; 
     border-top: #ffffff solid 1px;
-    
 }
 
 @mixin group-content-li {
@@ -83,6 +81,7 @@
     padding: 0 0.2rem; 
     @include flex-between;
     margin: 0.5rem 0 -0.2rem 0;
+    border-bottom: none !important;
 
     p {
         @include padding-margin;
