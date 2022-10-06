@@ -199,7 +199,7 @@ h3 {
 }
         
 .aside {
-    width: 21.4rem;
+    width: 21.5rem;
 
     li {
     list-style-type: none;
@@ -211,7 +211,7 @@ h3 {
 }
 
 .border_list {
-    height: 20.25rem;
+    height: 20.45rem;
     width: 18rem;
     border: $gray-border;
 }
@@ -226,10 +226,13 @@ h3 {
 
 .navigation_list li {
     padding: $padding-group-list-li;
+    border-bottom: $gray-border;
+    flex: 3;
 
     &:hover {
         background-color: #f3f3f3;
         font-weight: 600;
+        border-bottom: none;
 
         .navigation_content {
             background-color: #f3f3f3;
@@ -261,10 +264,13 @@ li:hover .navigation_content {
 
 .community_list li {
     padding: $padding-group-list-li;
+    border-bottom: $gray-border;
+    flex: 3;
 
     &:hover {
         background-color: #f3f3f3;
         font-weight: 600;
+        border-bottom: none;
 
         .community_content {
             background-color: #f3f3f3;
@@ -283,7 +289,7 @@ li:hover .navigation_content {
 }
  
 .community_list li:hover {
-    margin-left: -0.3rem;
+    margin-left: -0.1rem;
 }
 
 li:hover .community_content {
