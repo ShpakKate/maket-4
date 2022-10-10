@@ -33,7 +33,7 @@
 
 @mixin list {
     border-top: $color-withe solid 1px;
-    border-left: $color-withe solid 1px;
+    /*border-left: $color-withe solid 1px;*/
 }
 
 @mixin list-content {
@@ -64,18 +64,39 @@
     cursor: pointer;
 }
 
+@mixin list-activ {
+    padding: 0.5rem 0.25rem;
+    flex: 3;
+    border-bottom:  #cecbc9 solid 1px;
+    border-left: solid 1px transparent;
+    box-shadow: 0 1px 0 0 #ffffff;
+    letter-spacing: -1px;
+}
+
 @mixin group-content {
     position: absolute;
     background-color: #f3f3f3;
     padding: 0 0.7rem;
-    margin-top: 0.5rem;
-    margin-left: -0.8rem;
+    margin-top: 0.65rem;
+    margin-left: -0.4rem;
     width: 16.65rem;
-    height: 18rem;
-    border-top: #ffffff solid 1px;
-    box-shadow: 0 -1px 0 0 #cecbc9;
+    height: 17.95rem;
+}
 
+@mixin activ-content {
+    background-color: #f3f3f3;
+    border-left: color-withe solid 1px;
+    font-weight: 300 !important;
+    display: block;
+    height: 17.95rem;
+}
 
+@mixin list-hover {
+    background-color: #f3f3f3;
+    font-weight: 600;
+    box-shadow: -1px 0 0 0 #ffffff inset;
+    border-bottom: #f3f3f3 2px solid;
+    border-right:  #cecbc9 solid 1px;
 }
 
 @mixin group-content-li {
@@ -87,33 +108,6 @@
 
     p {
         @include padding-margin;
-    }
-}
-
-@mixin content-activ {
-    background-color: #f3f3f3;
-    border-left: color-withe solid 1px;
-    font-weight: 300 !important;
-    display: block;
-}
-
-@mixin list-activ {
-    padding: $padding-group-list-li;
-    border-bottom: $gray-border;
-    flex: 3;
-
-    &.active,
-    &:hover {
-        background-color: #f3f3f3;
-        font-weight: 600;
-        letter-spacing: -1px;
-        z-index: 1;
-        border-bottom: none;
-        height: 1.4rem;
-
-        .activ_content {
-            @include content-activ;
-        }
     }
 }
 

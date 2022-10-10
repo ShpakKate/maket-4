@@ -230,10 +230,33 @@ h3 {
    @include group-list;
 }
 
-.navigation_list li {
+.navigation_list > li {
    @include list-activ;
+
+   &:hover {
+    @include list-hover;
+    @include activ-content;
+    }
+
+    &:first-child:hover {
+        border-left: none;
+        
+        .activ_content {
+            margin-left: -0.3rem;
+        }
+    }
+
+    &:last-child:hover {
+        border-right: none;
+        box-shadow: none;
+    }
 }
 
+.navigation_list li:hover .activ_content {
+    background-color: #f3f3f3;
+    border-left: color-withe solid 1px;
+    font-weight: 300 !important;
+}
 
 .activ_content {
     @include group-content;
@@ -255,8 +278,26 @@ li:hover .activ_content {
     @include group-list;
 }
 
-.community_list li {
+.community_list > li {
     @include list-activ;
+
+    &:hover {
+        @include list-hover;
+        @include activ-content;
+        }
+    
+        &:first-child:hover {
+            border-left: none;
+            
+            .activ_content {
+                margin-left: -0.3rem;
+            }
+        }
+    
+        &:last-child:hover {
+            border-right: none;
+            box-shadow: none;
+        }
 }
 
 .activ_content {
@@ -323,8 +364,6 @@ li:hover .activ_content {
 .hr_style {
     @include hr-l(#191919);
     margin: 0.5rem 0;
-
-
 }
 
 .footer_bottom {
