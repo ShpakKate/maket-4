@@ -33,7 +33,6 @@
 
 @mixin list {
     border-top: $color-withe solid 1px;
-    /*border-left: $color-withe solid 1px;*/
 }
 
 @mixin list-content {
@@ -54,7 +53,7 @@
 
 @mixin group {
     @include aside-block;
-    height: 24.5rem;
+    height: 24rem;
 }
 
 @mixin group-list {
