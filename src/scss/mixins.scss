@@ -20,21 +20,20 @@
 
 @mixin border-img {
     background-color: #e7e4e3;
-    padding: 0.2rem;
+    padding: 0.25rem;
 }
 
 @mixin aside-block {
     background-color: #e7e4e3;
     padding: 1rem;
-    border-top: #f1f0ef solid 1px;
-    border-left: #f1f0ef solid 1px;
+    border-top: $color-withe solid 1px;
+    border-left: $color-withe solid 1px;
     border-bottom: $gray-border;
 }
 
 @mixin list {
-    border-top: #f1f0ef solid 1px;
-    border-left: #f1f0ef solid 1px;
-    /*border-bottom: $gray-border;*/
+    border-top: $color-withe solid 1px;
+    border-left: $color-withe solid 1px;
 }
 
 @mixin list-content {
@@ -66,14 +65,16 @@
 
 @mixin group-content {
     position: absolute;
-    display: none;
     background-color: #f3f3f3;
     padding: 0 0.7rem;
-    margin-top: 0.6rem;
-    margin-left: -0.7rem;
-    width: 16.4rem;
-    height: 17.9rem; 
+    margin-top: 0.5rem;
+    margin-left: -0.8rem;
+    width: 16.65rem;
+    height: 18rem;
     border-top: #ffffff solid 1px;
+    box-shadow: 0 -1px 0 0 #cecbc9;
+
+
 }
 
 @mixin group-content-li {
@@ -86,4 +87,38 @@
     p {
         @include padding-margin;
     }
+}
+
+@mixin content-activ {
+    background-color: #f3f3f3;
+    border-left: color-withe solid 1px;
+    font-weight: 300 !important;
+    display: block;
+}
+
+@mixin list-activ {
+    padding: $padding-group-list-li;
+    border-bottom: $gray-border;
+    flex: 3;
+
+    /*&.active,*/
+    &:hover {
+        background-color: #f3f3f3;
+        font-weight: 600;
+        letter-spacing: -1px;
+        z-index: 1;
+        border-bottom: none;
+        height: 1.4rem;
+
+        .activ_content {
+            @include content-activ;
+        }
+    }
+}
+
+@mixin hr-l ($color-hr) {
+    border: none;
+    height: 1px;
+    color: $color-hr;
+    background-color: $color-hr;
 }
