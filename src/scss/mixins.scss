@@ -61,6 +61,7 @@
     @include flex-between;
     @include list;
     @include padding-margin;
+    cursor: pointer;
 }
 
 @mixin group-content {
@@ -101,7 +102,7 @@
     border-bottom: $gray-border;
     flex: 3;
 
-    /*&.active,*/
+    &.active,
     &:hover {
         background-color: #f3f3f3;
         font-weight: 600;
