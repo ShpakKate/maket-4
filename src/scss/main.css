@@ -194,7 +194,7 @@ h3 {
   border-top: #f1f0ef solid 1px;
   border-left: #f1f0ef solid 1px;
   border-bottom: #cecbc9 1px solid;
-  height: 19.5rem;
+  height: 20rem;
 }
 
 .advertising_img {
@@ -246,7 +246,7 @@ h3 {
   border-top: #f1f0ef solid 1px;
   border-left: #f1f0ef solid 1px;
   border-bottom: #cecbc9 1px solid;
-  height: 24.5rem;
+  height: 24rem;
 }
 
 .navigation_list {
@@ -254,43 +254,44 @@ h3 {
   flex-direction: row;
   justify-content: space-between;
   border-top: #f1f0ef solid 1px;
-  border-left: #f1f0ef solid 1px;
   margin: 0;
   padding: 0;
+  cursor: pointer;
 }
 
-.navigation_list li {
-  padding: 0.5rem 0.7rem;
-  border-bottom: #cecbc9 1px solid;
+.navigation_list > li {
+  padding: 0.5rem 0.25rem;
   flex: 3;
+  border-left: solid 1px #e7e4e3;
+  border-bottom: #cecbc9 solid 1px;
+  box-shadow: 0 1px 0 0 #ffffff;
+  letter-spacing: -1px;
 }
 
-.navigation_list li.active, .navigation_list li:hover {
+.navigation_list > li:hover {
   background-color: #f3f3f3;
   font-weight: 600;
-  letter-spacing: -1px;
-  z-index: 1;
-  border-bottom: none;
-  height: 1.4rem;
+  box-shadow: -1px 0 0 0 #ffffff inset, 0 1.5px 0 #f3f3f3;
+  border-bottom: #f3f3f3 1px solid;
+  border-right: #cecbc9 solid 1px;
 }
 
-.navigation_list li.active .activ_content, .navigation_list li:hover .activ_content {
-  background-color: #f3f3f3;
-  border-left: color-withe solid 1px;
-  font-weight: 300 !important;
-  display: block;
+.navigation_list > li:first-child:hover {
+  border-left: none;
+}
+
+.navigation_list > li:last-child:hover {
+  border-right: none;
+  box-shadow: none;
 }
 
 .activ_content {
   position: absolute;
   background-color: #f3f3f3;
   padding: 0 0.7rem;
-  margin-top: 0.5rem;
-  margin-left: -0.8rem;
-  width: 16.65rem;
-  height: 18.1rem;
-  border-top: #ffffff solid 1px;
-  box-shadow: 0 -1px 0 0 #cecbc9;
+  margin-top: 0.1rem;
+  width: 16.6rem;
+  height: 17.9rem;
 }
 
 .activ_content li {
@@ -306,10 +307,6 @@ h3 {
 .activ_content li p {
   margin: 0;
   padding: 0;
-}
-
-li:hover .activ_content {
-  display: block;
 }
 
 .community {
@@ -318,7 +315,7 @@ li:hover .activ_content {
   border-top: #f1f0ef solid 1px;
   border-left: #f1f0ef solid 1px;
   border-bottom: #cecbc9 1px solid;
-  height: 24.5rem;
+  height: 24rem;
 }
 
 .community_list {
@@ -326,62 +323,35 @@ li:hover .activ_content {
   flex-direction: row;
   justify-content: space-between;
   border-top: #f1f0ef solid 1px;
-  border-left: #f1f0ef solid 1px;
   margin: 0;
   padding: 0;
+  cursor: pointer;
 }
 
-.community_list li {
-  padding: 0.5rem 0.7rem;
-  border-bottom: #cecbc9 1px solid;
+.community_list > li {
+  padding: 0.5rem 0.25rem;
   flex: 3;
+  border-left: solid 1px #e7e4e3;
+  border-bottom: #cecbc9 solid 1px;
+  box-shadow: 0 1px 0 0 #ffffff;
+  letter-spacing: -1px;
 }
 
-.community_list li.active, .community_list li:hover {
+.community_list > li:hover {
   background-color: #f3f3f3;
   font-weight: 600;
-  letter-spacing: -1px;
-  z-index: 1;
-  border-bottom: none;
-  height: 1.4rem;
+  box-shadow: -1px 0 0 0 #ffffff inset, 0 1.5px 0 #f3f3f3;
+  border-bottom: #f3f3f3 1px solid;
+  border-right: #cecbc9 solid 1px;
 }
 
-.community_list li.active .activ_content, .community_list li:hover .activ_content {
-  background-color: #f3f3f3;
-  border-left: color-withe solid 1px;
-  font-weight: 300 !important;
-  display: block;
+.community_list > li:first-child:hover {
+  border-left: none;
 }
 
-.activ_content {
-  position: absolute;
-  background-color: #f3f3f3;
-  padding: 0 0.7rem;
-  margin-top: 0.5rem;
-  margin-left: -0.8rem;
-  width: 16.65rem;
-  height: 18.1rem;
-  border-top: #ffffff solid 1px;
-  box-shadow: 0 -1px 0 0 #cecbc9;
-}
-
-.activ_content li {
-  display: block;
-  padding: 0 0.2rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 0.5rem 0 -0.2rem 0;
-  border-bottom: none !important;
-}
-
-.activ_content li p {
-  margin: 0;
-  padding: 0;
-}
-
-li:hover .activ_content {
-  display: block;
+.community_list > li:last-child:hover {
+  border-right: none;
+  box-shadow: none;
 }
 
 .nikon {
@@ -390,7 +360,7 @@ li:hover .activ_content {
   border-top: #f1f0ef solid 1px;
   border-left: #f1f0ef solid 1px;
   border-bottom: #cecbc9 1px solid;
-  height: 18.8rem;
+  height: 19.2rem;
 }
 
 .nikon img {

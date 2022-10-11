@@ -17,8 +17,7 @@ body {
 .header {
     background-color: #101010;
     padding-top: 1.6rem;
-    box-shadow: 0 0 0 1px #404040;
-    
+    box-shadow: 0 0 0 1px #404040;    
 }
 
 .head {
@@ -89,7 +88,6 @@ input[type="search"]::placeholder { color: #c3c1bf; }
     height: 99.5rem;
     background-color: #ffffff;
     margin: 0 auto;
-
 }
 
 .content {
@@ -235,15 +233,10 @@ h3 {
 
    &:hover {
     @include list-hover;
-    @include activ-content;
     }
 
     &:first-child:hover {
         border-left: none;
-        
-        .activ_content {
-            margin-left: -0.3rem;
-        }
     }
 
     &:last-child:hover {
@@ -252,65 +245,38 @@ h3 {
     }
 }
 
-.navigation_list li:hover .activ_content {
-    background-color: #f3f3f3;
-    border-left: color-withe solid 1px;
-    font-weight: 300 !important;
-}
-
 .activ_content {
     @include group-content;
 }
 
 .activ_content li {
     @include group-content-li;
-}
-
-li:hover .activ_content {
-    display: block;
 }
 
 .community {
     @include group;
-}
-
+  }
+  
 .community_list {
     @include group-list;
 }
-
+  
 .community_list > li {
     @include list-activ;
-
+ 
     &:hover {
-        @include list-hover;
-        @include activ-content;
-        }
-    
-        &:first-child:hover {
-            border-left: none;
-            
-            .activ_content {
-                margin-left: -0.3rem;
-            }
-        }
-    
-        &:last-child:hover {
-            border-right: none;
-            box-shadow: none;
-        }
-}
-
-.activ_content {
-    @include group-content;
-}
-
-.activ_content li {
-    @include group-content-li;
-}
-
-li:hover .activ_content {
-    display: block;
-}
+     @include list-hover;
+     }
+ 
+     &:first-child:hover {
+         border-left: none;
+     }
+ 
+     &:last-child:hover {
+         border-right: none;
+         box-shadow: none;
+     }
+ }
 
 .nikon {
     @include aside-block;
