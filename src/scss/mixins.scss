@@ -1,0 +1,109 @@
+@mixin flex-p {
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin flex-between {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+@mixin search-backround {
+    background-color: inherit;
+    border: none;
+}
+
+@mixin border-item {
+    border: #404040 1px solid;
+}
+
+@mixin border-img {
+    background-color: #e7e4e3;
+    padding: 0.25rem;
+}
+
+@mixin aside-block {
+    background-color: #e7e4e3;
+    padding: 1rem;
+    border-top: $color-withe solid 1px;
+    border-left: $color-withe solid 1px;
+    border-bottom: $gray-border;
+}
+
+@mixin list {
+    border-top: $color-withe solid 1px;
+}
+
+@mixin list-content {
+    position: absolute;
+    display: none;
+    background-color: #f3f3f3;
+    padding: 0 0.7rem;
+    margin-top: 0.45rem;
+    margin-left: -0.8rem;
+    width: 16.6rem;
+    height: 17.9rem;
+}
+
+@mixin padding-margin {
+    margin: 0;
+    padding: 0;
+}
+
+@mixin group {
+    @include aside-block;
+    height: 24rem;
+}
+
+@mixin group-list {
+    @include flex-between;
+    @include list;
+    @include padding-margin;
+    cursor: pointer;
+}
+
+@mixin list-activ {
+    padding: 0.5rem 0.25rem;
+    flex: 3;
+    border-left: solid 1px #e7e4e3;
+    border-bottom:  #cecbc9 solid 1px;
+    box-shadow: 0 1px 0 0 #ffffff;
+    letter-spacing: -1px;
+}
+
+@mixin list-hover {
+    background-color: #f3f3f3;
+    font-weight: 600;
+    box-shadow: -1px 0 0 0 #ffffff inset, 0 1.5px 0 #f3f3f3;
+    border-bottom: #f3f3f3 1px solid;
+    border-right:  #cecbc9 solid 1px;
+}
+
+@mixin group-content {
+    position: absolute;
+    background-color: #f3f3f3;
+    padding: 0 0.7rem;
+    margin-top: 0.1rem;
+    width: 16.6rem;
+    height: 17.9rem;
+}
+
+@mixin group-content-li {
+    display: block; 
+    padding: 0 0.2rem; 
+    @include flex-between;
+    margin: 0.5rem 0 -0.2rem 0;
+    border-bottom: none !important;
+
+    p {
+        @include padding-margin;
+    }
+}
+
+@mixin hr-l ($color-hr) {
+    border: none;
+    height: 1px;
+    color: $color-hr;
+    background-color: $color-hr;
+}
