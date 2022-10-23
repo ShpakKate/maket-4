@@ -38,10 +38,9 @@
     .footer {
         width: 90%;
     }
-}
+}    
     
-    
-@media (min-width: 480px) and (max-width: 767.9px ) {
+@media (min-width: 355px) and (max-width: 767.9px ) {
     
     .header-wrapper {
         padding: 0;
@@ -108,8 +107,100 @@
         }
     }
 
-    .content-nav {
+    .content-title {
+        font-size: 1.5rem;
+    }
+
+    .aside {
+        width: 20rem;
+    }
+  
+    .footer {
+        width: 100%;
+        height: auto;
+        margin: 0;
+    }
+
+    .info {
+        display: block;
+        flex-direction: column;
+    }
+
+    .footer-bottom {
+        display: block;
+    }
+}
+
+    
+@media (min-width: 320px) and (max-width: 354.9px ) {
+    
+    .header-wrapper {
+        padding: 0;
+    }
+
+    .header {
+        display: block;
+        width: 100%;
+        margin: 0;
+
+        .title {
+            width: 100%;
+        }
+        .search{
+            width: 100%;
+        }
+    }
+
+    .wrap-input-keyword {
+        width: 100%;
+        padding-right: 1rem;
+    }
+
+    .input-search {
+        width: 2rem;
+    }
+
+    .title {
+        background-color: #5aa5d0;
+
+        .title-slogan-text {
+            display: none;
+        } 
+
+        .title-photo {
+            display: none;
+        }
         
+        .title-bg {
+            display: none;
+        }
+    
+        .title-cross {
+            display: none;
+        }
+    }
+
+    .main {
+        width: 100%;
+        margin: 0;
+        display: block;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .content-section {
+        clear: both;
+    }
+
+    .content-img {
+        margin: 1rem 30%;
+
+        img {
+            width: 100%;
+        }
     }
 
     .content-title {
@@ -133,5 +224,27 @@
 
     .footer-bottom {
         display: block;
+    }
+}
+
+@media print {
+    @page {
+        margin: 1cm;
+    }
+
+    .header-wrapper {
+        display: none;
+    }
+
+    .content-nav {
+        display: none;
+    }
+
+    .aside {
+        display: none;
+    }
+
+    .footer {
+        display: none;
     }
 }
